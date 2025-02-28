@@ -35,6 +35,22 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
+        //   <------------UC4------------>
+        // Password validation: Apply rules to check the password validity
+        if (pwd == null || !pwd.matches("^(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*]{8,}$")) {
+            PrintWriter out = response.getWriter();
+            out.println("<font color=red>Password must meet the following criteria:</font>");
+            out.println("<ul>");
+            out.println("<li>At least 8 characters long</li>");
+            out.println("<li>At least one uppercase letter</li>");
+            out.println("<li>At least one numeric digit</li>");
+            out.println("<li>Exactly one special character (e.g., !@#$%^&*)</li>");
+            out.println("</ul>");
+            RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.html");
+            rd.include(request, response);
+            return;
+        }
+
         //get servlet config init params
         String userID = getServletConfig().getInitParameter("user");
         String password = getServletConfig().getInitParameter("password");
