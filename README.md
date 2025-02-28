@@ -4,6 +4,13 @@ This project contains a Java Servlet (`LoginServlet`) that handles user login wi
 
 ---
 
+***This Repo has a Main-UC branch which is updated with its most recent update and changes***  
+# 📌 *Main-UC* 
+### Merged with:  
+**uc1 --> uc2 --> uc3 --> uc4**
+  
+---
+
 ## 📌 *UC1:* - Create First Servlet web app 
 ### *Covered:*  
 ⭕ Create Servlet Project using Maven  
